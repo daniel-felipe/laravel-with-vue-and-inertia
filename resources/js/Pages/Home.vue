@@ -8,6 +8,8 @@
 import Layout from '../Shared/Layout.vue';
 
 export default {
-    components: { Layout }
+    components: { 
+        Layout 
+    },
 };
 </script>
