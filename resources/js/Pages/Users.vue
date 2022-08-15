@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <Layout>
         <h2 class="text-4xl font-bold">Users</h2>
 
         <Nav />
@@ -15,16 +15,16 @@
                 Refresh
             </Link>
         </div>
-    </div>
+    </Layout>
 </template>
 
 <script>
-import Nav from '../Shared/Nav.vue';
+import Layout from '../Shared/Layout.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
 export default { 
     components: { 
-        Nav,
+        Layout,
         Link,
     },
 
