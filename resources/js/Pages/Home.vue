@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h2>Home</h2>
-
+        <h2 class="text-4xl font-bold">Home</h2>
+        
         <Nav />
     </div>
 </template>

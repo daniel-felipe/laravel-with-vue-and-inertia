@@ -18,9 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
+    sleep(2);
     return inertia('Users');
 });
 
 Route::get('/settings', function () {
     return inertia('Settings');
+});
+
+Route::post('/logout', function () {
+    dd(request()->all());
 });
