@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Home</h2>
+        <h2>Settings</h2>
 
         <Nav />
     </div>
@@ -10,6 +10,6 @@
 import Nav from '../Shared/Nav.vue';
 
 export default {
-    components: { Nav }
+    components: { Nav },
 };
 </script>
