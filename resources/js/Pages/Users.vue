@@ -1,4 +1,8 @@
 <template>
+    <Head>
+        <title>My App - Users</title>
+    </Head>
+
     <h2 class="text-4xl font-bold">Users</h2>
 
     <Nav />
@@ -16,19 +20,8 @@
     </div>
 </template>
 
-<script>
-import Layout from '../Shared/Layout.vue';
-import { Link } from '@inertiajs/inertia-vue3';
-
-export default { 
-    components: { 
-        Link,
-    },
-
-    props: { 
-        time: String 
-    },
-
-    layout: Layout,
-};
+<script setup>
+defineProps({
+    time: String,
+});
 </script>
