@@ -58,7 +58,6 @@ let props = defineProps({
 let search = ref(props.filters.search);
 
 watch(search, debounce(value => {
-    console.log('triggered')
     Inertia.get('/users', { search: value }, {
         preserveState: true,
         replace: true,

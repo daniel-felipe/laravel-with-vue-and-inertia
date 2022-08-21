@@ -32,7 +32,6 @@ __webpack_require__.r(__webpack_exports__);
     var props = __props;
     var search = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(props.filters.search);
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.watch)(search, lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default()(function (value) {
-      console.log('triggered');
       _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.get('/users', {
         search: value
       }, {

@@ -25,13 +25,11 @@
     </section>
 </template>
 <script>
-import { Head } from '@inertiajs/inertia-vue3';
 import Nav from './Nav';
 
 export default {
     components: { 
         Nav,
-        Head
     },
 
     computed: {
