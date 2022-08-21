@@ -6,7 +6,7 @@
     <div class="flex justify-between mb-6">
         <div class="flex items-center">
             <h1 class="text-3xl">Users</h1>
-            <Link href="/users/create" class="text-blue-500 text-sm ml-3">New User</Link>
+            <Link v-if="can.createUser" href="/users/create" class="text-blue-500 text-sm ml-3">New User</Link>
         </div>
 
         <input v-model="search" type="text" placeholder="Search..." class="border px-2 rounded-lg">
@@ -26,8 +26,8 @@
             </thead>
             <tbody>
                 <tr v-for="user in users.data" :key="user.id" class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                    <td class="pl-6">{{ user.name }}</td>
-                    <td class="py-4 px-6 text-end">
+                    <td class="pl-6 py-4 pl-6">{{ user.name }}</td>
+                    <td v-if="user.can.edit" class="text-end py-4 pr-6">
                         <Link
                             :href="`/users/${user.id}/edit`"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
@@ -53,6 +53,7 @@ import debounce from 'lodash/debounce';
 let props = defineProps({
     users: Object,
     filters: Object,
+    can: Object,
 });
 
 let search = ref(props.filters.search);

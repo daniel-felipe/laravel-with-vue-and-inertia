@@ -34,15 +34,21 @@ Route::middleware('auth')->group(function () {
                 ->withQueryString()
                 ->through(fn ($user) => [
                 'id' => $user->id,
-                'name' => $user->name
+                'name' => $user->name,
+                'can' => [
+                    'edit' => auth()->user()->can('edit', $user),
+                ]
             ]),
             'filters' => request()->only(['search']),
+            'can' => [
+                'createUser' => auth()->user()->can('create', User::class),
+            ]
         ]);
     });
     
     Route::get('/users/create', function () {
         return inertia('Users/Create');
-    });
+    })->can('create', 'App\Models\User');
     
     Route::post('/users', function () {
         $attributes = request()->validate([
